@@ -1,0 +1,22 @@
+syntax = "proto3";
+package service;
+
+service Calculate {
+
+  rpc SquareNumber (NumberRequest) returns (NumberReply);
+
+  rpc AddNumbers (AddRequest) returns (NumberReply);
+}
+
+message NumberRequest {
+  int32 value = 1;
+}
+
+message AddRequest {
+  int32 a = 1;
+  int32 b = 2;
+}
+
+message NumberReply {
+  int32 result = 1;
+}
